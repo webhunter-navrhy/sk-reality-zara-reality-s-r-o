@@ -1,0 +1,62 @@
+/* Motiv „vetrecin" — přebíjí šablonu Atelier do stylu webu vetrecin.sk (26. 11. 2026):
+   světle šedý podklad #F1EFED, černé tučné verzálky, oranžová #FF9202, logo vetrecin vlevo v liště.
+   Zapíná se v reality/data/znacka/<slug>.json klíčem "tema": "vetrecin". */
+
+@font-face{font-family:"UN Grotesk";src:url(fonts/InterTightBold-latin-ext.woff2)format('woff2');font-weight:400 800;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"UN Grotesk";src:url(fonts/InterTightBold-latin.woff2)format('woff2');font-weight:400 800;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+.r-atelier{--list:#F1EFED;--ink:#121213;--text:#3b3b3d;--taupe:#121213;--line:rgba(18,18,19,.14);--bg:#F1EFED;--dark:#121213;
+  --display:"UN Grotesk",system-ui,sans-serif;--body:"UN Grotesk",system-ui,sans-serif;--okraj:0px;--hore:0px;
+  --accent:#FF9202;--accent-deep:#E07F00;--kamen:#F1EFED;background:#F1EFED;font-weight:400}
+.at-kamen{background:#F1EFED;padding:0}
+.at-list{width:100%;max-width:none;border-radius:0;box-shadow:none;background:#F1EFED}
+.at-hero{border-radius:0;margin:0 auto;width:min(1240px,calc(100% - 40px));margin-top:0}
+
+/* lišta: logo vlevo, světlý pruh jako na vetrecin.sk */
+.at-nav{position:static;color:#121213;background:#F1EFED}
+.at-nav__in{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;padding:18px 20px}
+.at-nav__in>.at-nav__a:first-child{order:2;margin-left:auto;font:500 15px/1 var(--body);color:#121213}
+.at-nav__k{order:3;font:500 15px/1 var(--body);color:#121213;margin-left:22px}
+.at-znacka{order:1;display:block;flex:0 0 auto;width:clamp(150px,16vw,210px);aspect-ratio:7175/1581;font-size:0;color:transparent;max-width:none;
+  background:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4gPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczp4b2RtPSJodHRwOi8vd3d3LmNvcmVsLmNvbS9jb3JlbGRyYXcvb2RtLzIwMDMiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI3MS44Nzg2bW0iIGhlaWdodD0iMTUuODQ1Mm1tIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDcxNzUuODggMTU4MS44OCI+IDxkZWZzPiA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiAuZmlsMCB7ZmlsbDpub25lfSAuZmlsMiB7ZmlsbDojRkY5MjAyfSAuZmlsMSB7ZmlsbDpibGFjaztmaWxsLXJ1bGU6bm9uemVyb30gPC9zdHlsZT4gPC9kZWZzPiA8ZyBpZD0iTGF5ZXJfeDAwMjBfMSI+IDxtZXRhZGF0YSBpZD0iQ29yZWxDb3JwSURfMENvcmVsLUxheWVyIj48L21ldGFkYXRhPiA8cmVjdCBjbGFzcz0iZmlsMCIgd2lkdGg9IjcxNzUuODgiIGhlaWdodD0iMTU4MS44OCI+PC9yZWN0PiA8cGF0aCBjbGFzcz0iZmlsMSIgZD0iTTQzMS4xOSAxNDkzLjM1bDMyMi4xMiAwIDMzOC41NCAtMTA0OC40NiAtMjYyLjYyIDAgLTIzNS45NiA3MzAuNDQgLTIzMS44NSAtNzMwLjQ0IC0yNjguNzggMCAzMzguNTQgMTA0OC40NnptMTE5NC4xNCAyMi41N2MyMjUuNjksMCAzODMuNjgsLTkwLjI4IDQ5Mi40MiwtMjU0LjQzbC0yMTUuNDMgLTExOWMtNjcuNzIsOTIuMzMgLTE0NS42OCwxMzMuMzcgLTI3Ni45OSwxMzMuMzcgLTE1OCwwIC0yNjQuNjksLTgwLjAyIC0zMDcuNzgsLTIxNS40NGw4MzMuMDMgMGMyLjA1LC0yMi41NiA0LjA5LC00Ny4xOSA0LjA5LC02OS43NSAwLC0yOTkuNTcgLTIxNy40OSwtNTU2LjA0IC01NDkuODcsLTU1Ni4wNCAtMzA1LjcxLDAgLTU0OS44NywyMzguMDEgLTU0OS44Nyw1MzkuNjIgMCwzMDkuODIgMjQwLjA1LDU0MS42OCA1NzAuNCw1NDEuNjh6bS0zMDEuNjIgLTY1OC42M2M0Ny4xOSwtMTA2LjY4IDE1NS45NCwtMTg0LjY1IDI4MS4wOSwtMTg0LjY1IDEzNS40MSwwIDIyNS42OSw2My42IDI3Ni45OSwxODQuNjVsLTU1OC4wOCAwem0xNDU0LjcgNjQyLjIxbDU1LjQgMCAtMTYuNDEgLTI1MC4zMWMtMjM4LC0yLjA1IC0yNjYuNzIsLTQ5LjI1IC0yNjYuNzIsLTE4Ni43MWwwIC0zNzkuNTkgMjM1Ljk1IDAgMCAtMjM4IC0yMzUuOTUgMCAwIC0yNzQuOTMgLTI1OC41MyAwIDAgMjc0LjkzIC0xMjUuMTYgMCAwIDIzOCAxMjUuMTYgMCAwIDM3OS41OWMwLDM1Mi45IDE5OS4wMyw0MzcuMDIgNDg2LjI3LDQzNy4wMnptMTQxLjU3IC02LjE1bDI1OC41MyAwIDAgLTUzMy40N2MwLC0xNjguMjQgNTcuNDQsLTI1Mi4zNiAyOTMuNCwtMjUyLjM2bDE2LjQxIC0yNzIuODljLTEzOS41MywyLjA2IC0yMjkuOCwzMC43OCAtMzA5LjgxLDExMC44bDAgLTEwMC41MyAtMjU4LjUzIDAgMCAxMDQ4LjQ2em0xMTI2LjQyIDIyLjU3YzIyNS43LDAgMzgzLjY5LC05MC4yOCA0OTIuNDMsLTI1NC40M2wtMjE1LjQzIC0xMTljLTY3LjcyLDkyLjMzIC0xNDUuNjgsMTMzLjM3IC0yNzcsMTMzLjM3IC0xNTcuOTksMCAtMjY0LjY4LC04MC4wMiAtMzA3Ljc3LC0yMTUuNDRsODMzLjAyIDBjMi4wNiwtMjIuNTYgNC4xLC00Ny4xOSA0LjEsLTY5Ljc1IDAsLTI5OS41NyAtMjE3LjQ5LC01NTYuMDQgLTU0OS44NywtNTU2LjA0IC0zMDUuNzEsMCAtNTQ5Ljg3LDIzOC4wMSAtNTQ5Ljg3LDUzOS42MiAwLDMwOS44MiAyNDAuMDUsNTQxLjY4IDU3MC4zOSw1NDEuNjh6bS0zMDEuNjEgLTY1OC42M2M0Ny4xOSwtMTA2LjY4IDE1NS45NCwtMTg0LjY1IDI4MS4wOSwtMTg0LjY1IDEzNS40MSwwIDIyNS42OSw2My42IDI3Ni45OSwxODQuNjVsLTU1OC4wOCAwem0xNDMwLjA4IDY1OC42M2MyMDUuMTgsMCAzNjEuMTIsLTkwLjI4IDQ2NS43NSwtMjU0LjQzbC0yMTUuNDQgLTExOWMtNTkuNSw4Ni4xOCAtMTQzLjYyLDEzMy4zNyAtMjUwLjMxLDEzMy4zNyAtMTY2LjE5LDAgLTMwMy42NiwtMTM5LjUzIC0zMDMuNjYsLTMwMS42MiAwLC0xNjIuMDkgMTM3LjQ3LC0zMDEuNjEgMzAzLjY2LC0zMDEuNjEgMTA2LjY5LDAgMTkwLjgxLDUxLjI5IDI1MC4zMSwxMzUuNDFsMjE3LjUgLTEyMS4wNWMtMTA0LjY0LC0xNjQuMTUgLTI2Mi42MywtMjUyLjM4IC00NjcuODEsLTI1Mi4zOCAtMzA1LjcxLDAgLTU0OS44NywyMzguMDEgLTU0OS44Nyw1MzkuNjIgMCwyOTcuNTEgMjQ0LjE2LDU0MS42OCA1NDkuODcsNTQxLjY4em01NDUuNzggLTIyLjU3bDI1OC41MiAwIDAgLTEwNDguNDYgLTI1OC41MiAwIDAgMTA0OC40NnptMzg5LjgzIDBsMjU2LjQ3IDAgMCAtNTgwLjY1YzAsLTE0OS43OSA4Ni4xOCwtMjQwLjA2IDIyOS44LC0yNDAuMDYgMTk0LjkyLDAgMjI3Ljc1LDExNC45IDIyNy43NSwzMzYuNDlsMCA0ODQuMjIgMjU2LjQ3IDAgMCAtNTQ5Ljg3YzAsLTMwOS44MiAtMTE2Ljk1LC01MDguODUgLTQzMC44NywtNTA4Ljg1IC0xMTQuOSwwIC0yMTMuMzgsMzQuODggLTI4My4xNSw5NC4zOGwwIC04NC4xMiAtMjU2LjQ3IDAgMCAxMDQ4LjQ2eiI+PC9wYXRoPiA8cGF0aCBjbGFzcz0iZmlsMiIgZD0iTTU3NDQuNjUgMTExLjI3Yy0zMS40MSwzMS4zNyAtNDcuMjMsNjcuOTMgLTQ3LjIzLDExMi4xNiAwLDQ0LjE5IDE1LjgxLDgxLjE5IDQ3LjIzLDExMi41IDMxLjM3LDMxLjM2IDY5LjI3LDQ2LjUgMTEyLjUsNDYuNSA0Mi4wOSwtMC4wMSA4MC4xMiwtMTUuMTQgMTExLjQyLC00Ni41IDMxLjM2LC0zMS4zMSA0Ny41MSwtNjguMzIgNDcuNTEsLTExMi41IDAuMDEsLTQ0LjI0IC0xNi4xNiwtODAuOCAtNDcuNTEsLTExMi4xNSAtMzEuMzEsLTMwLjE4IC02OS4zMywtNDUuMzEgLTExMS40MiwtNDUuMzEgLTQ0LjI1LC0wLjAxIC04MS4xNCwxNS4xMyAtMTEyLjUsNDUuM3oiPjwvcGF0aD4gPC9nPiA8L3N2Zz4g") left center/contain no-repeat}
+.at-nav.plna{position:fixed;top:0;background:rgba(241,239,237,.95);color:#121213;width:100%;left:0;transform:none;box-shadow:0 1px 0 var(--line)}
+.at-nav.plna .at-nav__in{padding-top:12px;padding-bottom:12px}
+.at-nav__a:hover{color:var(--accent-deep)}
+
+/* hero: titulek velkými tučnými písmeny, oranžové tlačítko */
+.at-h1{font:700 clamp(2rem,4.6vw,4.2rem)/1.04 var(--display);letter-spacing:0;text-transform:uppercase}
+.at-hero__pod{font:600 clamp(1.1rem,1.6vw,1.4rem)/1.3 var(--body);opacity:1}
+.at-btn{background:#FF9202;color:#121213;border-radius:999px;font:700 15px/1.2 var(--body);padding:16px 34px;letter-spacing:0}
+.at-btn:hover{filter:none;background:#ffa52e}
+.at-btn span{border-bottom:2px solid #121213;padding-bottom:1px}
+
+/* nadpisy a texty */
+.at-h2,.r-atelier .sec-h h2{font:700 clamp(1.7rem,2.8vw,2.6rem)/1.08 var(--display);text-transform:uppercase;letter-spacing:0;color:#121213}
+.at-h2::after,.r-atelier .sec-h h2::after{content:"";display:block;width:84px;height:5px;margin-top:14px;border-radius:5px;background:#FF9202}
+.r-atelier .sec-h h2::after{margin-inline:auto}
+.at-bloky dt,.at-jmeno,.at-karta b{font:700 1.25rem/1.2 var(--display);color:#121213}
+.at-lead,.at-prose{font-size:16.5px;line-height:1.75;color:#2a2a2c}
+.at-pod,.r-atelier .sec-h .eyebrow{color:#FF9202;font:700 12px/1.4 var(--body);letter-spacing:.14em}
+.at-odkaz,.r-atelier .dal,.r-atelier .vse{color:#121213;font-weight:700;border-bottom-color:#FF9202}
+.at-seznam a:first-child,.at-seznam a:hover{border-color:#FF9202}
+.at-linka i{background:#FF9202}
+.at-kontakt{border-top:1px solid var(--line)}
+.at-kontakt .at-btn{margin-top:28px}
+.at-agent{border-radius:12px}
+.at-zbytek .map__ask .btn{border-radius:999px;background:#FF9202;color:#121213;font-weight:700}
+.at-zbytek .map,.at-zbytek .dokumenty a{border-radius:12px}
+.at-hero__img,.at-hero{border-radius:12px}
+
+/* patička černá jako na vetrecin.sk */
+.r-atelier .pata{background:#121213;color:rgba(255,255,255,.78)}
+.r-atelier .pata__in{border-color:rgba(255,255,255,.18)}
+.r-atelier .dole{background:rgba(18,18,19,.96)}
+.at-logo img{height:30px}
+.pata__lg img{height:26px}
+
+@media(max-width:760px){
+  .at-nav__in{padding:14px 16px;flex-wrap:nowrap}
+  .at-nav__in>.at-nav__a:first-child{display:none}
+  .at-znacka{width:140px}
+  .at-hero{width:calc(100% - 24px)}
+  .at-btn{padding:14px 26px}
+}
